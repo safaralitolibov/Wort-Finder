@@ -1,0 +1,160 @@
+* {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #f0f4f8;
+      user-select: none;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    #sentence {
+      width: 100%;
+      max-width: 480px;
+      padding: 14px 20px;
+      border-radius: 15px;
+      border: none;
+      font-size: 1.3rem;
+      outline: none;
+      box-shadow:
+        inset 0 0 8px rgba(255,255,255,0.15),
+        0 0 15px rgba(255,255,255,0.1);
+      background: rgba(255 255 255 / 0.1);
+      color: #f0f4f8;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+      animation: fadeIn 1.3s ease forwards;
+    }
+
+    #sentence::placeholder {
+      color: rgba(240,244,248,0.6);
+      font-style: italic;
+    }
+
+    #sentence:focus {
+      background: rgba(255 255 255 / 0.2);
+      box-shadow:
+        inset 0 0 15px rgba(255,255,255,0.4),
+        0 0 25px rgba(100, 180, 255, 0.7);
+      transition: box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 480px;
+      padding: 16px 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0d1a42;
+      background: linear-gradient(135deg, #6dd5fa, #2980b9);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(41, 128, 185, 0.6);
+      transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -25%;
+      width: 150%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: rotate(25deg);
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+    button:hover::before {
+      left: 100%;
+      transition: all 0.5s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #2980b9, #6dd5fa);
+      box-shadow: 0 12px 30px rgba(41, 128, 185, 0.9);
+      transform: scale(1.1) rotate(-2deg);
+      animation: shake 0.6s ease infinite;
+    }
+
+    #result {
+      margin-top: 40px;
+      padding: 25px 35px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #a0e9ff;
+      background: rgba(10, 60, 100, 0.8);
+      border-radius: 20px;
+      box-shadow:
+        0 0 20px #39a0ff,
+        0 0 60px #39a0ff88,
+        inset 0 0 12px #39a0ffcc;
+      text-align: center;
+      min-width: 300px;
+      max-width: 480px;
+      user-select: text;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.8s ease forwards;
+    }
+    #result::before {
+      content: "";
+      position: absolute;
+      top: -15%;
+      left: -15%;
+      width: 130%;
+      height: 130%;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #00ccff66 0%, transparent 70%);
+      filter: blur(25px);
+      animation: pulseGlow 3s ease infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes shake {
+      0%, 100% {transform: scale(1.1) rotate(-2deg);}
+      25% {transform: scale(1.15) rotate(2deg);}
+      50% {transform: scale(1.1) rotate(-2deg);}
+      75% {transform: scale(1.15) rotate(2deg);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 40px #00ccffaa, 0 0 70px #00ccffaa;
+        opacity: 1;
+      }
+      50% {
+        box-shadow: 0 0 25px #00ccff88, 0 0 45px #00ccff88;
+        opacity: 0.6;
+      }
+    }
+  
